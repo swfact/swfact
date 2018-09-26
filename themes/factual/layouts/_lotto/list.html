@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "header/head.html" . }}
+  </head>
+  <body class="has-navbar-fixed-top">
+    <header>
+      {{ partial "body/header.html" . }}
+    </header>
+    <main class="section content">
+      <h1 class="title">{{ .Title }}</h1>
+      {{ .Content }}
+      <div class="tabs is-toggle is-toggle-rounded is-large is-fullwidth">
+        <ul>
+          {{range where .Site.Pages.Reverse "Type" "=" "lotto-results"}}
+            <li><a>{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+      <section class="tabs-content">
+        {{range where .Site.Pages.Reverse "Type" "=" "lotto-results"}}
+          <article id="{{ .Params.class_id }}" class="tab-content">
+            {{ .Content }}
+          </article>
+        {{ end }}
+      </section>
+    </main>
+    <footer>
+      {{ partial "body/footer.html" . }}
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+baseURL = "https://www.swfact.org/"
+languageCode = "en-gb"
+title = "South Woodham Ferrers Association of Council Tax payers"
+theme = "factual"

@@ -1,0 +1,16 @@
+/* CSS Tabs * /
+
+input[type="radio"], .tab-pane { display: none; }
+
+/* the magic * /
+input[type="radio"]:checked ~ .tab-content > .tab-pane {
+  display: block;
+}
+*/
+  .tab-content {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }

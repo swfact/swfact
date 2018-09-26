@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "head/meta-tech.html" . }}
+
+    <title>{{ .Title }}</title>
+
+    {{ partial "head/style-bulma.html" . }}
+    {{ partial "head/script-fontawesome.html" . }}
+
+    {{ partial "head/style-factual.html" . }}
+
+    {{ partial "head/script-jquery.html" . }}
+
+    {{ partial "head/script-factual.html" . }}
+
+  </head>
+  <body class="has-navbar-fixed-top">
+    <header>
+      {{ partial "body/header.html" . }}
+    </header>
+    <main class="section container content">
+      <h1 class="title">{{ .Title }}</h1>
+      {{ .Content }}
+    </main>
+    <footer>
+      {{ partial "body/footer.html" . }}
+    </footer>
+  </body>
+</html>

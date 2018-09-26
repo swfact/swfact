@@ -1,0 +1,4 @@
+{{ $tabs := resources.Get "js/tabs.js" }}
+{{ $menu := resources.Get "js/menu.js" }}
+{{ $globalJS := slice $tabs $menu | resources.Concat "js/bundle.js"| resources.Minify | resources.Fingerprint }}
+<script defer src="{{ $globalJS.Permalink }}" integrity="{{ $globalJS.Data.Integrity }}"></script>
